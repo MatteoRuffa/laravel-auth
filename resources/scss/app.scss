@@ -9,6 +9,52 @@ $fa-font-path: "../fonts/webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-h1 {
-    color: $text-color;
+
+// login
+#nav_login {
+    background-color: $mr-text-dark!important;
+    background: linear-gradient(to bottom, $mr-text-dark, lighten($mr-text-dark, 10%));
+    .logo_cortese {
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    a {
+        color: white;
+    }
+}
+
+.form-login {
+    .card-header {
+        background-color: $mr-text-dark;
+        background: linear-gradient(to bottom, $mr-text-dark, lighten($mr-text-dark, 10%));
+        color: white;
+    }
+    .card-body {
+        .btn-primary {
+            background-color: $mr-color-contrast;
+            border-color: $mr-color-contrast;
+            color: white;
+        }
+        .btn-link {
+            color: $mr-color-contrast;
+        }
+        .form-control:focus {
+            border-color: $mr-text-dark;
+            box-shadow: 0 0 0 0.2rem rgba($mr-text-dark, .25);
+        }
+        #form-login .form-check-input[type="checkbox"]:checked,
+        #form-login .form-check-input[type="checkbox"]:not(:checked) {
+            border: 1px solid $mr-color-contrast !important;
+            background: $mr-color-contrast !important;
+            box-shadow: inset 0 1px 3px rgba($mr-color-contrast, .1) !important;
+        }
+
+        #form-login .form-check-input[type="checkbox"]:checked::after,
+        #form-login .form-check-input[type="checkbox"]:not(:checked)::after {
+            background: $mr-color-contrast !important;
+        }
+
+    }
 }
