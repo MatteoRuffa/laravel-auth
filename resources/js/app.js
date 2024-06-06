@@ -30,3 +30,28 @@ deleteSubmitButtons.forEach((button) => {
         });
     });
 });
+
+// resources/js/script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const modalInfo = new bootstrap.Modal(document.getElementById('staticBackdropInfo'));
+
+    document.querySelectorAll('.open-modal-info').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            const title = this.getAttribute('data-title');
+            const description = this.getAttribute('data-description');
+            const created = this.getAttribute('data-created');
+            const categories = this.getAttribute('data-categories');
+
+            document.getElementById('modalTitleInfo').textContent = title;
+            document.getElementById('modalDescriptionInfo').textContent = description;
+            document.getElementById('modalCreatedInfo').textContent = created;
+            document.getElementById('modalCategoriesInfo').textContent = categories;
+
+            modalInfo.show();
+        });
+    });
+});
+
+
+
+

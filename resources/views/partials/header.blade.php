@@ -9,7 +9,7 @@
 
     <!-- Icon -->
     <li class="nav-item me-3 me-lg-0 p-2">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="https://github.com/MatteoRuffa/laravel-auth">
             <i class="fab fa-github"></i>
         </a>
     </li>
