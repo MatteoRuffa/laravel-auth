@@ -1,9 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreProjectRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -12,8 +16,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::paginate(10);
+        return view("admin.projects.index", compact("projects"));
     }
+    
+
 
     /**
      * Show the form for creating a new resource.

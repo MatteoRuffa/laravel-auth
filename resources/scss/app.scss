@@ -9,20 +9,25 @@ $fa-font-path: "../fonts/webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-
+body {
+    font-family: "Montsserat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
 
 // login
 #nav_login {
     background-color: $mr-text-dark!important;
     background: linear-gradient(to bottom, $mr-text-dark, lighten($mr-text-dark, 10%));
-    .logo_cortese {
-        img {
-            width: 50px;
-            height: 50px;
-        }
-    }
+    
     a {
         color: white;
+    }
+}
+.logo_cortese {
+    img {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -86,4 +91,32 @@ main {
         
     }
 }
+// table
+#mr-table {
+    border-radius: 10px;
+    overflow: hidden;
+    .table-icon {
+        font-size: 2rem;
+        color: $mr-color-contrast;
+        text-decoration: none;
+    }
+    button.no-border {
+        border: none!important;
+    }
+}
+.pagination .page-link {
+    background-color: rgb(68, 51, 86);
+    color: white; 
+}
+.pagination .page-item.active .page-link {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    border-color: rgb(68, 51, 86); 
+}
+.pagination .page-link:active {
+    background-color: rgb(68, 51, 86); 
+    color: white; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    border-color: rgb(68, 51, 86); 
+}
+
 

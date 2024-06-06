@@ -5,6 +5,9 @@
                 <span class="navbar-toggler-icon"></span>
                 <a class="navbar-brand" href="#">Portfolio</a>
             </button>
+            <div class="logo_cortese px-3">
+                <img src="{{asset('image/logoCortese.jpeg')}}" alt="" class="rounded-circle">
+            </div>
             @include('partials.header')
         
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -15,10 +18,12 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active{{Route::currentRouteName() == 'admin.dashboard' ? 'active' : ''}}" 
+            href="{{route('admin.dashboard')}}" aria-current="page" >Dasboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Project</a>
+            <a class="nav-link {Route::currentRouteName() == 'admin.posts.index' ? 'active' : ''}}" 
+            href="{{route('admin.projects.index')}}">Project</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
