@@ -29,17 +29,13 @@
                                 <i class="fas fa-pencil-alt"></i>
                             </div>
                         </a>
-                        <form id="delete-form" action="{{ route('admin.projects.destroy', $element->id) }}"
+                        <form id="delete-form-{{ $element->id }}" action="{{ route('admin.projects.destroy', $element->id) }}"
                             method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="table-icon fs-3 m-1 no-border"
-                                type="submit" data-element-id="{{ $element->id }}"
-                                data-element-title="{{ $element->title }}">
-                                <div class="icon-container">
-                                    <i class="fa-solid fa-trash-can "></i>
-                                </div>
-                            </button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                         </form>
                     </div>
 
@@ -48,3 +44,4 @@
         @endforeach
   </tbody>
 </table>
+@include('partials.modal-delete')
