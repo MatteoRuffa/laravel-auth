@@ -60,12 +60,14 @@ $fa-font-path: "../fonts/webfonts" !default;
     }
     
 }
-.navbar-header {
-    display: flex;
-    justify-content: space-between;
+
+.bg-dark {
+    --bs-dark-rgb: rgb(67, 56, 79)!important;
+    background-color: var(--bs-dark-rgb)!important;
 }
-.navbar-header > div {
-    flex-grow: 1;
+.offcanvas {
+    --bs-dark-rgb: rgb(67, 56, 79)!important;
+    background-color: var(--bs-dark-rgb)!important;
 }
 // .btn-success {
 //     background-color: $mr-color-contrast;
@@ -81,5 +83,7 @@ main {
             background-color: $mr-text-dark;
             color: white;
         }
+        
     }
 }
+
