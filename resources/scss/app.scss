@@ -10,6 +10,7 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import '~bootstrap/scss/bootstrap';
 
 
+
 // login
 #nav_login {
     background-color: $mr-text-dark!important;
@@ -56,5 +57,29 @@ $fa-font-path: "../fonts/webfonts" !default;
             background: $mr-color-contrast !important;
         }
 
+    }
+    
+}
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-header > div {
+    flex-grow: 1;
+}
+// .btn-success {
+//     background-color: $mr-color-contrast;
+// }
+
+// main
+main {
+    // background-color: $mr-text-light;
+    margin-top: 100px;    
+    height: 90vh;
+    #dashboard {
+        .card-header {
+            background-color: $mr-text-dark;
+            color: white;
+        }
     }
 }
