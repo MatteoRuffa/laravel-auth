@@ -71,6 +71,13 @@ class ProjectController extends Controller
     {
         $project_modified =  Project::findOrFail($id);
         $form_data = $request->validated();
+        if ($request->hasFile('image_url')) {
+            if ($project_modified->image_url) {
+                Storage::delete($project_modified->image_url);
+            }
+            $img_path = Storage::put('my_images', $request->image_url);
+            $form_data['image_url'] = $img_path;
+        }
         if ($project_modified->title != $form_data["title"]) {
             $form_data["slug"] =  Project::generateSlug($form_data["title"]);
         }

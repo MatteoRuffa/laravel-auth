@@ -27,15 +27,16 @@
                             </div>
                         </a>
 
-                        <a href="{{ route('admin.projects.edit', $element) }}" class="table-icon m-1">
+                        <a href="{{ route('admin.projects.edit', $element) }}" class="table-icon m-1 pe-2">
                             <div class="icon-container">
                                 <i class="fas fa-pencil-alt"></i>
                             </div>
                         </a>
-                        <form id="delete-form-{{ $element->id }}" class="table-icon m-1" action="{{ route('admin.projects.destroy', $element->id) }}" method="POST">
+                        <form id="delete-form-{{ $element->id }}" action="{{ route('admin.projects.destroy', $element->id) }}"
+                            method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="btn table-icon m-1 open-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-title="{{ $element->title }}" data-description="{{ $element->description }}" data-created="{{ $element->created }}" data-categories="{{ $element->categories }}">
+                            <button type="button" class="btn btn-table table-icon" data-bs-toggle="modal" data-bs-target="#deleteModal">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>

@@ -3,8 +3,8 @@
 
 @section('content')
     <section class="my-5">
-        <h1 class="m-3">All Projects</h1>
-        <a role="button" class="mr-btn mb-3" href="{{ route('admin.projects.create') }}">Add a Project</a>
+        <h1 class=" m-3">All Projects</h1>
+        <a role="button" class="btn btn-add mb-3" href="{{ route('admin.projects.create') }}">Add a Project</a>
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session()->get('message') }}

@@ -35,51 +35,86 @@ body {
 }
 
 .form-login {
-    .card-header {
-        background-color: $mr-text-dark;
-        background: linear-gradient(to bottom, $mr-text-dark, lighten($mr-text-dark, 10%));
-        color: white;
-    }
     .card-body {
-        .btn-primary {
-            background-color: $mr-color-contrast;
-            border-color: $mr-color-contrast;
-            color: white;
-        }
-        .btn-link {
-            color: $mr-color-contrast;
-        }
-        .form-control:focus {
-            border-color: $mr-text-dark;
-            box-shadow: 0 0 0 0.2rem rgba($mr-text-dark, .25);
-        }
         #form-login .form-check-input[type="checkbox"]:checked,
         #form-login .form-check-input[type="checkbox"]:not(:checked) {
             border: 1px solid $mr-color-contrast !important;
             background: $mr-color-contrast !important;
             box-shadow: inset 0 1px 3px rgba($mr-color-contrast, .1) !important;
         }
-
         #form-login .form-check-input[type="checkbox"]:checked::after,
         #form-login .form-check-input[type="checkbox"]:not(:checked)::after {
             background: $mr-color-contrast !important;
         }
+    }
+}
 
+// buttons and various
+.btn {
+    background-color: $mr-color-contrast;
+    border-color: $mr-color-contrast;
+    color: white;
+    &.btn-danger {
+        background-color: #BB2D3B; 
+        border-color: #BB2D3B; 
+        color: white; 
+        &:hover {
+            background-color: darken(#BB2D3B, 10%); 
+            border-color: darken(#BB2D3B, 10%); 
+        }
+    }
+    &.btn-dark-override {
+        background-color: $mr-text-light;
+        border-color: $btn-dark-border;
+        color: $mr-bg-dark;
+    }
+    &.btn-table {
+        background-color: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+    &:hover {
+        background-color: $mr-bg-dark;
+        color: white;
+        box-shadow: 0 0 0 0.2rem rgba($mr-text-dark, .25);
+    }
+    &.btn-add:focus {
+        background-color: $mr-bg-dark;
+        color: white;
+        box-shadow: 0 0 0 0.2rem rgba($mr-text-dark, .25);
     }
     
+}
+.btn-link {
+    color: $mr-color-contrast;
+}
+
+.form-control:focus {
+    border-color: $mr-text-dark;
+    box-shadow: 0 0 0 0.2rem rgba($mr-text-dark, .25);
+}
+
+.card-header {
+    background-color: $mr-text-dark;
+    background: linear-gradient(to bottom, $mr-text-dark, lighten($mr-text-dark, 10%));
+    color: white;
+}
+
+.modal-header {
+    background-color: $mr-text-dark;
+    background: linear-gradient(to bottom, $mr-text-dark, lighten($mr-text-dark, 10%));
+    color: white;
+}
+
+.offcanvas {
+    --bs-dark-rgb: rgb(67, 56, 79)!important;
+    background-color: var(--bs-dark-rgb)!important;
 }
 
 .bg-dark {
     --bs-dark-rgb: rgb(67, 56, 79)!important;
     background-color: var(--bs-dark-rgb)!important;
 }
-.offcanvas {
-    --bs-dark-rgb: rgb(67, 56, 79)!important;
-    background-color: var(--bs-dark-rgb)!important;
-}
-// .btn-success {
-//     background-color: $mr-color-contrast;
-// }
 
 // main
 main {
@@ -91,9 +126,9 @@ main {
             background-color: $mr-text-dark;
             color: white;
         }
-        
     }
 }
+
 // table
 #mr-table {
     border-radius: 10px;
@@ -107,6 +142,8 @@ main {
         border: none!important;
     }
 }
+
+// pagination
 .pagination .page-link {
     background-color: rgb(68, 51, 86);
     color: white; 

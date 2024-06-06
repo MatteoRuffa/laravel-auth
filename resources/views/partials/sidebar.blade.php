@@ -12,7 +12,7 @@
         
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Portfolio</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -21,19 +21,16 @@
             <a class="nav-link active{{Route::currentRouteName() == 'admin.dashboard' ? 'active' : ''}}" 
             href="{{route('admin.dashboard')}}" aria-current="page" >Dasboard</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {Route::currentRouteName() == 'admin.posts.index' ? 'active' : ''}}" 
-            href="{{route('admin.projects.index')}}">Project</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Carpet
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item {Route::currentRouteName() == 'admin.posts.index' ? 'active' : ''}}" 
+                href="{{route('admin.projects.index')}}">Project</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li>
-                <hr class="dropdown-divider">
+                <!-- <hr class="dropdown-divider"> -->
               </li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
@@ -41,7 +38,7 @@
         </ul>
         <form class="d-flex mt-3" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
+          <button class="btn btn-dark-override" type="submit">Search</button>
         </form>
       </div>
     </div>
