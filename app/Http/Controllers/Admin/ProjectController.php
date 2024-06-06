@@ -27,15 +27,24 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.projects.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        //
+        $form_data = $request->validated();
+        $form_data["slug"] =  Project::generateSlug($form_data["title"]);
+        if ($request->hasFile('image_url')) {
+            $img_path = Storage::put('my_images', $request->image_url);
+            $form_data['image_url'] = $img_path;
+        }
+        $new_project = new Project();
+        $new_project->fill($form_data);
+        $new_project->save();
+        return redirect()->route("admin.projects.index");
     }
 
     /**
