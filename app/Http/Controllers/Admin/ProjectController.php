@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
@@ -60,15 +61,22 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view("admin.projects.edit", compact("project"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, $id)
     {
-        //
+        $project_modified =  Project::findOrFail($id);
+        $form_data = $request->validated();
+        if ($project_modified->title != $form_data["title"]) {
+            $form_data["slug"] =  Project::generateSlug($form_data["title"]);
+        }
+        $project_modified->fill($form_data);
+        $project_modified->update();
+        return redirect()->route("admin.projects.index")->with('message', "Project (id:{$project_modified->id}): {$project_modified->title} modified successfully");
     }
 
     /**

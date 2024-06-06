@@ -31,7 +31,6 @@ deleteSubmitButtons.forEach((button) => {
     });
 });
 
-// resources/js/script.js
 document.addEventListener('DOMContentLoaded', function () {
     const modalInfo = new bootstrap.Modal(document.getElementById('staticBackdropInfo'));
 
@@ -42,16 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const created = this.getAttribute('data-created');
             const categories = this.getAttribute('data-categories');
 
-            document.getElementById('modalTitleInfo').textContent = title;
-            document.getElementById('modalDescriptionInfo').textContent = description;
-            document.getElementById('modalCreatedInfo').textContent = created;
-            document.getElementById('modalCategoriesInfo').textContent = categories;
+            document.getElementById('modalTitleInfo').innerHTML = `<strong>Title:</strong> ${title}`;
+            document.getElementById('modalDescriptionInfo').innerHTML = `<strong>Description:</strong> ${description}`;
+            document.getElementById('modalCreatedInfo').innerHTML = `<strong>Created at:</strong> ${created}`;
+            document.getElementById('modalCategoriesInfo').innerHTML = `<strong>Category:</strong> ${categories}`;
 
             modalInfo.show();
         });
     });
 });
-
 
 
 
